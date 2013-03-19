@@ -1,37 +1,55 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache2 (1.2.0)
-    apt (1.5.0)
-    aws (0.100.2)
-    build-essential (1.1.2)
+    apache2 (1.3.2)
+    apt (1.6.0)
+    aws (0.100.4)
+    build-essential (1.3.0)
     database (1.3.6)
       aws (>= 0.0.0)
       mysql (>= 1.3.0)
       postgresql (>= 1.0.0)
       xfs (>= 0.0.0)
-    erlang (1.1.0)
+    erlang (1.1.2)
       yum (>= 0.5.0)
-    mysql (1.3.0)
+    mysql (2.0.2)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
-    ntp (1.2.0)
-    openssh (1.1.0)
+    ntp (1.3.2)
+    openssh (1.1.2)
     openssl (1.0.0)
-    postgresql (1.0.0)
+    postgresql (2.1.0)
       openssl (>= 0.0.0)
-    rabbitmq (1.6.4)
+    rabbitmq (1.7.0)
       apt (>= 1.4.4)
       erlang (>= 0.9)
       yum (>= 0.5.0)
-    selinux (0.5.2)
+    selinux (0.5.4)
     xfs (1.0.0)
-    yum (1.0.0)
+    yum (2.0.6)
+
+GIT
+  remote: https://github.com/achied/chef-nova.git
+  ref: master
+  sha: 14c5b0d727f1d2488e1e741a75e3b81dad954a91
+  specs:
+    nova (5.0.0)
+      apt (>= 0.0.0)
+      database (>= 0.0.0)
+      glance (>= 0.0.0)
+      keystone (>= 0.0.0)
+      mysql (>= 0.0.0)
+      openssh (>= 0.0.0)
+      osops-utils (>= 0.0.0)
+      rabbitmq (>= 0.0.0)
+      selinux (>= 0.0.0)
+      sysctl (>= 0.0.0)
+      yum (>= 0.0.0)
 
 GIT
   remote: https://github.com/cloudbau/chef-glance.git
   ref: master
-  sha: 60e58b0e0e15c0f01cf25e16a8821bb1ac573f70
+  sha: eed98c082ac71eb8a4c31ce5241d1c615cd276db
   specs:
     glance (5.0.0)
       database (>= 0.0.0)
@@ -59,24 +77,6 @@ GIT
       database (>= 0.0.0)
       mysql (>= 0.0.0)
       osops-utils (>= 0.0.0)
-
-GIT
-  remote: https://github.com/cloudbau/chef-nova.git
-  ref: master
-  sha: c63edfd62dd5629a12e06e04084c1a04ee33d31c
-  specs:
-    nova (5.0.0)
-      apt (>= 0.0.0)
-      database (>= 0.0.0)
-      glance (>= 0.0.0)
-      keystone (>= 0.0.0)
-      mysql (>= 0.0.0)
-      openssh (>= 0.0.0)
-      osops-utils (>= 0.0.0)
-      rabbitmq (>= 0.0.0)
-      selinux (>= 0.0.0)
-      sysctl (>= 0.0.0)
-      yum (>= 0.0.0)
 
 GIT
   remote: https://github.com/cloudbau/chef-osops-utils.git
@@ -114,27 +114,27 @@ GIT
     sysctl (0.1.0)
 
 DEPENDENCIES
-  apache2 (= 1.2.0)
-  apt (= 1.5.0)
-  aws (= 0.100.2)
-  build-essential (= 1.1.2)
+  apache2 (= 1.3.2)
+  apt (= 1.6.0)
+  aws (= 0.100.4)
+  build-essential (= 1.3.0)
   database (= 1.3.6)
-  erlang (= 1.1.0)
+  erlang (= 1.1.2)
   glance (>= 0)
   horizon (>= 0)
   keystone (>= 0)
-  mysql (= 1.3.0)
+  mysql (= 2.0.2)
   mysql-openstack (>= 0)
   nova (>= 0)
-  ntp (= 1.2.0)
-  openssh (= 1.1.0)
+  ntp (= 1.3.2)
+  openssh (= 1.1.2)
   openssl (= 1.0.0)
   osops-utils (>= 0)
-  postgresql (= 1.0.0)
-  rabbitmq (= 1.6.4)
+  postgresql (= 2.1.0)
+  rabbitmq (= 1.7.0)
   rabbitmq-openstack (>= 0)
-  selinux (= 0.5.2)
+  selinux (= 0.5.4)
   sysctl (>= 0)
   xfs (= 1.0.0)
-  yum (= 1.0.0)
+  yum (= 2.0.6)
 

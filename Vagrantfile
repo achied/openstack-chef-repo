@@ -17,31 +17,12 @@ Vagrant::Config.run do |config|
     ctrl.vm.network :hostonly, "192.168.10.10", :netmask => "255.255.255.0"
     ctrl.vm.network :hostonly, "10.0.111.10", :netmask => "255.255.255.0"
     ctrl.vm.network :hostonly, "10.0.112.10", :netmask => "255.255.255.0"
-    ctrl.vm.provision :chef_client do |chef|
-      chef.chef_server_url = ChefConfig.chef_url
-      chef.validation_client_name = "#{ChefConfig.chef_organization}-validator"
-      chef.validation_key_path = "#{ChefConfig.chef_organization}-validator.pem"
-      chef.run_list = "role[single-controller]"
-      chef.environment = "production"
-    end
-  end
-
-  1.upto(ChefConfig::number_of_compute_nodes) do |i|
-    compute_name = "compute#{i}"
-    config.vm.define compute_name.to_sym do |compute|
-      compute.vm.customize ["modifyvm", :id, "--memory", 2048]
-      compute.vm.box = "precise64"
-      compute.vm.host_name = compute_name
-      compute.vm.network :hostonly, "192.168.10.#{10+i}", :netmask => "255.255.255.0"
-      compute.vm.network :hostonly, "10.0.111.#{10+i}", :netmask => "255.255.255.0"
-      compute.vm.network :hostonly, "10.0.112.#{10+i}", :netmask => "255.255.255.0"
-      compute.vm.provision :chef_client do |chef|
-        chef.chef_server_url = ChefConfig.chef_url
-        chef.validation_client_name = "#{ChefConfig.chef_organization}-validator"
-        chef.validation_key_path = "#{ChefConfig.chef_organization}-validator.pem"
-        chef.run_list = "role[single-compute]"
-        chef.environment = "production"
-      end
-    end
+    #ctrl.vm.provision :chef_client do |chef|
+    #  chef.chef_server_url = ChefConfig.chef_url
+    #  chef.validation_client_name = "#{ChefConfig.chef_organization}-validator"
+    #  chef.validation_key_path = ".chef/#{ChefConfig.chef_organization}-validator.pem"
+    #  chef.run_list = "role[allinone]"
+    #  chef.environment = "production"
+    #end
   end
 end

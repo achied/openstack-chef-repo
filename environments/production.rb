@@ -16,7 +16,7 @@ override_attributes(
   },
   "osops_networks" => {
     "public" => "10.0.112.0/24",
-    "management" => "192.168.10.0/24",
+    "management" => "192.168.1.0/24",
     "nova" => "10.0.112.0/24"
   },
   "nova" => {
@@ -25,7 +25,7 @@ override_attributes(
     },
     "network" => {
       "fixed_range" => "10.0.111.0/24",
-      "public_interface" => "eth3",
+      "public_interface" => "eth2",
       "floating" => { "ipv4_cidr" => "10.0.112.128/25" }
     },
     "networks" => [
@@ -35,7 +35,7 @@ override_attributes(
         "num_networks" => "1",
         "network_size" => "255",
         "bridge" => "br100",
-        "bridge_dev" => "eth2",
+        "bridge_dev" => "eth1",
         "dns1" => "8.8.8.8",
         "dns2" => "8.8.4.4"
       }

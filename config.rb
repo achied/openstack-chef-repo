@@ -12,10 +12,10 @@ class ChefConfig
 	# 2. Create a chef client with <somename>-validator
 	# 3. Put <somename>-validator.pem in this directory
 	# 4. change "chef_organization" to <somename>
-	self.chef_organization = "hv"
+	self.chef_organization = "achied"
 	self.chef_url = "https://api.opscode.com/organizations/#{chef_organization}"
 
 	# Change to the number of compute nodes you would like to have
-	self.number_of_compute_nodes = 1
+	self.number_of_compute_nodes = 0
 
 end
