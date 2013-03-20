@@ -4,6 +4,8 @@ run_list(
   "recipe[apt]",
   "recipe[openssh]",
   "recipe[ntp]",
+  "recipe[rsyslog]",
+  "recipe[rsyslog::openstack]",
   "recipe[osops-utils::packages]"
 )
 default_attributes(

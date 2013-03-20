@@ -5,11 +5,14 @@ run_list(
   "role[mysql-master]",
   "role[rabbitmq-server]",
   "role[keystone]",
+  "role[keystone-api]",
+  "role[glance-setup]",
   "role[glance]",
+  "role[cinder-all]",
   "role[nova-setup]",
-  "role[nova-scheduler]",
   "role[nova-api-ec2]",
   "role[nova-api-os-compute]",
-  "role[nova-volume]",
+  "role[nova-vncproxy]",
+  "role[nova-scheduler]",
   "role[horizon-server]"
 )
