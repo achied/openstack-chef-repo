@@ -50,6 +50,7 @@ roles:
   - cinder-all:
   - nova-setup:
   - nova-scheduler:
+  - api-metadata:
   - nova-api-ec2:
   - nova-api-os-compute:
   - nova-volume:
@@ -62,4 +63,4 @@ roles:
 nodes:
 - iaas:
     run_list: role[base] role[allinone]
-    options: -x root -P <password> -E GaaS
+    options: -x root -P sistemas -E GaaS

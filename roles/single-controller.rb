@@ -10,6 +10,7 @@ run_list(
   "role[glance]",
   "role[cinder-all]",
   "role[nova-setup]",
+  "role[api-metadata]",
   "role[nova-api-ec2]",
   "role[nova-api-os-compute]",
   "role[nova-vncproxy]",
